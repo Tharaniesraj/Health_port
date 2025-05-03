@@ -71,18 +71,11 @@ nav {
 }
 
 .nav-links li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    transition: var(--transition);
+    display: none;
 }
 
 .nav-links li a:hover::after {
-    width: 100%;
+    display: none;
 }
 
 .hamburger {
@@ -178,15 +171,21 @@ nav {
 
 /* Products Section */
 .products {
-    padding: 6rem 5%;
-    background: linear-gradient(135deg, #f5f6fa, #e9ecef);
+    padding: 5rem 10%;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
 }
 
 .product-card {
@@ -195,9 +194,11 @@ nav {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: var(--transition);
-    border: 1px solid rgba(52, 152, 219, 0.1);
     transform-style: preserve-3d;
     perspective: 1000px;
+    aspect-ratio: 1;
+    text-decoration: none;
+    color: inherit;
 }
 
 .product-card:hover {
@@ -207,23 +208,27 @@ nav {
 
 .product-card img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
     transition: var(--transition);
 }
 
-.product-card:hover img {
-    transform: scale(1.05);
-}
-
-.product-card h3 {
+.product-info {
     padding: 1.5rem;
-    color: var(--primary-color);
-    transition: var(--transition);
+    text-align: center;
 }
 
-.product-card:hover h3 {
-    color: var(--secondary-color);
+.product-info h3 {
+    color: #3498db;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.product-name {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
 }
 
 /* About Section */
@@ -550,5 +555,300 @@ footer {
     .nav-links li a {
         padding: 0.5rem 1rem;
         font-size: 1rem;
+    }
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    aspect-ratio: 1;
+    text-decoration: none;
+    color: inherit;
+    width: 200px;  /* Make it smaller */
+    height: 200px; /* Make it square */
+    display: inline-block;
+    margin: 1rem;
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.product-info h3 {
+    margin: 0;
+    font-size: 1rem;
+}.hero {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    padding: 8rem 5%;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+/* Contact Section */
+/* Contact Section */
+.contact-section {
+    padding: 8rem 5%;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    position: relative;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+    justify-content: space-between;
+}
+
+.contact-frame, .owner-frame {
+    border: 2px solid #4a90e2;
+    padding: 2.5rem;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-frame:hover, .owner-frame:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2);
+}
+
+.contact-frame {
+    flex: 1;
+    min-width: 400px;
+}
+
+.owner-frame {
+    flex: 1;
+    min-width: 350px;
+}
+
+.contact-info h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.contact-info p {
+    color: #34495e;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.contact-info p i {
+    color: #4a90e2;
+    margin-right: 0.5rem;
+    width: 20px;
+}
+
+.owner-image {
+    text-align: center;
+}
+
+.owner-image img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid #4a90e2;
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.2);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #4a90e2;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #3498db;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .contact-frame, .owner-frame {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info h2 {
+        font-size: 1.8rem;
+    }
+    
+    .owner-image img {
+        width: 180px;
+        height: 180px;
+    }
+}
+/* 3D Effects for Contact Section */
+.contact-section {
+    padding: 8rem 5%;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+    justify-content: space-between;
+    perspective: 1000px;
+}
+
+.contact-frame, .owner-frame {
+    border: 2px solid #4a90e2;
+    padding: 2.5rem;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.1);
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+}
+
+.contact-frame:hover, .owner-frame:hover {
+    transform: rotateX(5deg) rotateY(5deg) scale(1.02);
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2);
+}
+
+.contact-frame {
+    flex: 1;
+    min-width: 400px;
+    transform: rotateY(2deg);
+}
+
+.owner-frame {
+    flex: 1;
+    min-width: 350px;
+    transform: rotateY(-2deg);
+}
+
+.contact-info h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.owner-image img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid #4a90e2;
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.2);
+    transform: translateZ(20px);
+}
+
+.social-links a {
+    color: #4a90e2;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    transform: translateZ(0);
+}
+
+.social-links a:hover {
+    color: #3498db;
+    transform: translateZ(20px) rotate(5deg);
+}
+
+/* Add subtle background 3D effect */
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(74, 144, 226, 0.1), transparent, rgba(74, 144, 226, 0.1));
+    transform: rotate3d(1, 1, 0, 45deg);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Add subtle animation */
+.contact-frame, .owner-frame {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) translateZ(0);
+    }
+    50% {
+        transform: rotateX(2deg) rotateY(2deg) translateZ(10px);
+    }
+    100% {
+        transform: rotateX(0deg) rotateY(0deg) translateZ(0);
     }
 }
